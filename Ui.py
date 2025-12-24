@@ -27,11 +27,11 @@ class QuizInterface:
                                              fill=THEME_COLOR)
         self.canvas.grid(row=1, column=0,columnspan=2,pady=50)
 
-        true_img = PhotoImage(file="images/true.png")
+        true_img = PhotoImage(file="true.png")
         self.true = Button(image=true_img, highlightthickness=0, command=self.correct_click)
         self.true.grid(row=2, column=1)
 
-        false_img = PhotoImage(file="images/false.png")
+        false_img = PhotoImage(file="false.png")
         self.false = Button(image=false_img, highlightthickness=0,command=self.wrong_click)
         self.false.grid(row=2, column=0)
 
@@ -63,4 +63,5 @@ class QuizInterface:
             self.canvas.config(bg=GREEN)
         else:
             self.canvas.config(bg=RED)
+
         self.window.after(1000, self.get_next_question)
